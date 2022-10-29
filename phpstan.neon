@@ -3,4 +3,23 @@ parameters:
     paths:
     - src
     - tests
+    - build/Phpstan
+    excludePaths:
+    - build/Phpstan/*/Fixtures/*
+
+services:
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DisallowedFunctionRule
+    tags:
+    - phpstan.rules.rule
+    arguments:
+      disallowedFunctionName: 'var_dump'
+
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DisallowedFunctionRule
+    tags:
+    - phpstan.rules.rule
+    arguments:
+      disallowedFunctionName: 'compact'
+
 
