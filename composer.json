@@ -1,0 +1,37 @@
+{
+  "name": "dave-liddament/phpstan-rules-tutorial",
+  "description": "Repo to support the PHPStan rules tutorial",
+  "type": "project",
+  "require": {
+    "php": ">=8.0 <8.2"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "1.8.*",
+    "phpunit/phpunit": "^9"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "DaveLiddament\\PhpstanTutorial\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DaveLiddament\\PhpstanTutorial\\Test\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Dave Liddament",
+      "email": "dave@lampbristol.com"
+    }
+  ],
+  "scripts": {
+    "phpstan": "phpstan analyse --level=8 src",
+    "test": "phpunit",
+    "all-checks": [
+      "@phpstan",
+      "@test"
+    ]
+  }
+}
