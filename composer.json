@@ -17,7 +17,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "DaveLiddament\\PhpstanTutorial\\Test\\": "tests/"
+      "DaveLiddament\\PhpstanTutorial\\Test\\": "tests/",
+      "DaveLiddament\\PhpstanTutorial\\Phpstan\\": "build/Phpstan/"
     }
   },
   "authors": [
@@ -27,7 +28,7 @@
     }
   ],
   "scripts": {
-    "phpstan": "phpstan analyse --level=8 src",
+    "phpstan": "phpstan analyse",
     "test": "phpunit",
     "all-checks": [
       "@phpstan",

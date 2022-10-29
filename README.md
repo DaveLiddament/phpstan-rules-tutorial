@@ -10,4 +10,33 @@ This repository contains the code to support [Dave Liddament](https://twitter.co
 1. Run: `composer install`
 1. Run all the checks. There is a composer script for this: `composer run-script all-checks`
 
+You should see something similar to this:
+
+```
+$ composer run-script all-checks
+> phpstan analyse 
+Note: Using configuration file /vagrant/phpstan.neon.
+ 5/5 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+
+                                                                                                                       
+ [OK] No errors                                                                                                        
+                                                                                                                       
+
+> phpunit
+PHPUnit 9.5.26 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.0.25
+Configuration: /vagrant/phpunit.xml
+
+.                                                                   1 / 1 (100%)
+
+Time: 00:00.015, Memory: 6.00 MB
+
+OK (1 test, 1 assertion)
+
+```
+
 You're all good to go!
+
+
