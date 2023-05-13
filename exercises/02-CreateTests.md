@@ -62,12 +62,12 @@ print("Hello world");
 
 
 ```php
-    public function testDontCallVarDump(): void
+    public function testDontPrintRule(): void
     {
-        $this->analyse([__DIR__ . '/Fixtures/varDump.php'], [
+        $this->analyse([__DIR__ . '/Fixtures/print.php'], [
             [
-                'Using var_dump is not allowed!',
-                5,
+                'Using print is not allowed!',
+                3,
             ],
         ]);
     }
