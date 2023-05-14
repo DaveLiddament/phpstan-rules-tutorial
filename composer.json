@@ -3,7 +3,7 @@
   "description": "Repo to support the PHPStan rules tutorial",
   "type": "project",
   "require": {
-    "php": ">=8.0 <8.2"
+    "php": ">=8.0 <8.3"
   },
   "require-dev": {
     "phpstan/phpstan": "1.8.*",
