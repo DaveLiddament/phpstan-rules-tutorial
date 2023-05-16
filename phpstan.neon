@@ -3,6 +3,9 @@ parameters:
     paths:
     - src
     - tests
+    - build/Phpstan
+    excludePaths:
+    - build/Phpstan/*/Fixtures/*
 
 services:
 -

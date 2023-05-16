@@ -8,6 +8,7 @@ use DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallDieRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
+/** @extends RuleTestCase<DontCallDieRule> */
 class DontCallDieRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule

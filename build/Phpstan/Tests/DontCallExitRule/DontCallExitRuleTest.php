@@ -8,6 +8,7 @@ use DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallExitRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
+/** @extends RuleTestCase<DontCallExitRule> */
 class DontCallExitRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule

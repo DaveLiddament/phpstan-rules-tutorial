@@ -8,6 +8,7 @@ use DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallGotoRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
+/** @extends RuleTestCase<DontCallGotoRule> */
 class DontCallGotoRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule
