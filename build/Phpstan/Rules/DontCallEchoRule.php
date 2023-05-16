@@ -9,6 +9,7 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
+/** @implements Rule<Node\Stmt\Echo_> */
 class DontCallEchoRule implements Rule
 {
     public function getNodeType(): string

@@ -8,6 +8,7 @@ use DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallPrintRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
+/** @extends RuleTestCase<DontCallPrintRule> */
 class DontCallPrintRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule

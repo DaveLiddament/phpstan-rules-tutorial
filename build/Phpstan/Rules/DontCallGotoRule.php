@@ -9,6 +9,7 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
+/** @implements Rule<Node\Stmt\Goto_> */
 class DontCallGotoRule implements Rule
 {
     public function getNodeType(): string
