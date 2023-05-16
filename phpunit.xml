@@ -16,6 +16,9 @@
         <testsuite name="default">
             <directory>tests</directory>
         </testsuite>
+        <testsuite name="phpstan">
+            <directory>build/Phpstan/Tests</directory>
+        </testsuite>
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
