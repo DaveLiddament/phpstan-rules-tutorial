@@ -148,8 +148,10 @@ class PersonSetIdOnlyCalledFromTestCodeRuleTest extends RuleTestCase
                 __DIR__ . '/Fixtures/SomeCode.php',
             ],
             [
-                'Can not call Person::setId outside of a test',
-                13,
+                [
+                    'Can not call Person::setId outside of a test',
+                    13,
+                ],
             ],
         );
     }
@@ -163,13 +165,13 @@ Look at `MethodCall`
 
 #### Look at scope
 
-Need it to tell us
+Need it to tell us:
 
 1. Class we are in.
 2. Class of `MethodCall`'s `$var` member data.
 
 
-#### Update test
+#### Update rule
 
 ```php
     public function processNode(Node $node, Scope $scope): array
@@ -203,5 +205,5 @@ Need it to tell us
 
 ## Your turn
 
-Create a rule to enforce that `Team` can only be constructed within `TeamBuilder`.
+Create a rule to enforce that `Team` can only be constructed within `TeamFactory`.
 

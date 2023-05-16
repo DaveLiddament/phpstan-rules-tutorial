@@ -11,17 +11,24 @@ Create a rule that does not allow calls to `var_dump`
 
 #### Create test code
 
-Snippet: `build/Phpstan/Tests/DontCallVarDump/Fixtures/var_dump.php`
+Snippet: `build/Phpstan/Tests/DontCallVarDumpRule/Fixtures/var_dump.php`
 
 ```php
 <?php
 
 var_dump("Don't do this");
 ```
-Test: `build/Phpstan/Tests/DontCallVarDump/DontCallVarDumpRuleTest.php`
+Test: `build/Phpstan/Tests/DontCallVarDumpRule/DontCallVarDumpRuleTest.php`
 
 ```php
-class DontCallVarDumpTest extends RuleTestCase
+<?php
+
+namespace DaveLiddament\PhpstanTutorial\Phpstan\Tests\DontCallVarDumpRule;
+
+use PHPStan\Rules\Rule;
+use PHPStan\Testing\RuleTestCase;
+
+class DontCallVarDumpRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule
     {
@@ -30,7 +37,7 @@ class DontCallVarDumpTest extends RuleTestCase
 
     public function testDontCallVarDump(): void
     {
-        $this->analyse([__DIR__ . '/Fixtures/varDump.php'], [
+        $this->analyse([__DIR__ . '/Fixtures/var_dump.php'], [
             [
                 'Using var_dump is not allowed!',
                 3,
@@ -103,7 +110,7 @@ Run tests. Get additional failure.
 
 **TESTS MUST CHECK MORE THAN THE HAPPY PATH**
 
-We need to check the name of the function we are calling too. Lets look at `FuncCall` in detail.
+We need to check the name of the function we are calling too. Let's look at `FuncCall` in detail.
 
 #### Get more information about the name node:
 
@@ -119,6 +126,9 @@ Update the rule to get more information about the `FuncCall`'s `name` node.
 ```
 
 #### Update the rule
+
+We can see that `$node->name` is of type `FullyQualified`. This extends `Name` so we can use `toLowerString()` to get the name of the function.
+
 
 ```php
     public function processNode(Node $node, Scope $scope): array
@@ -142,24 +152,12 @@ Check everything works.
 
 ## Your turn
 
+
 #### 1. Write a rule to disallow calls to compact
 
 Follow steps we've just been through to create a rule that to disallow calls to `compact`.
 
-#### 2. Write a rule to disallow var_export, unless 2nd argument is set to true.
 
-Write a rule that reports errors as outlined below:
+#### 2. Write a rule to disallow usage of $_GET.
 
-```php
-<?php
-
-var_export("This will is not allowed");  // ERROR
-
-var_export("This is also not allowed", false);  // ERROR
-
-$message = var_export("But this is OK", true);  // OK
-```
-
-#### 3. Can you think of some code where `FuncCall`'s `name` node will be of type `Expr`?
-
-Write some code to demonstrate this. What do you think about code like this? If you don't like it write a rule to disallow code like this.
+Follow the process we've been through, to create this rule.

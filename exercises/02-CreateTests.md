@@ -66,13 +66,25 @@ print("Hello world");
     {
         $this->analyse([__DIR__ . '/Fixtures/print.php'], [
             [
-                'Using print is not allowed!',
+                "Don't call print",
                 3,
             ],
         ]);
     }
 ```
 
+
+### Run tests
+
+```
+vendor/bin/phpunit 
+```
+
+Or just the PHPStan tests:
+
+```
+vendor/bin/phpunit --testsuite phpstan
+```
 
 
 ## Your turn
