@@ -8,6 +8,7 @@ use DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallEchoRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
+/** @extends RuleTestCase<DontCallEchoRule> */
 class DontCallEchoRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule
