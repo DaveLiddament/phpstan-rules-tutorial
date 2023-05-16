@@ -1,0 +1,4 @@
+<?php
+
+goto end;
+end:
