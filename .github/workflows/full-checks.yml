@@ -45,6 +45,5 @@ jobs:
       - name: "Install dependencies"
         run: "composer install --no-interaction --no-progress"
 
-
       - name: "Full CI"
-        run: "composer all"
+        run: "composer all-checks"
