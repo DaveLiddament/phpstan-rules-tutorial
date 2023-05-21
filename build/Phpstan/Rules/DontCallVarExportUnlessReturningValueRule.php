@@ -31,10 +31,8 @@ class DontCallVarExportUnlessReturningValueRule implements Rule
         $secondArgument = $node?->args[1]->value ?? null;
         if ($secondArgument !== null) {
             $type = $scope->getType($secondArgument);
-            if ($type instanceof ConstantBooleanType) {
-                if ($type->getValue() === true) {
-                    return [];
-                }
+            if ($type->isTrue()->yes()) {
+                return [];
             }
         }
 
