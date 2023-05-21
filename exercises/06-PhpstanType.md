@@ -34,6 +34,35 @@ After:
 
 ## Your turn
 
+#### Don't call var_export, unless 2nd argument resolves to true
+
+Make a rule that finds the errors in the code snippet below:
+
+```php
+<?php
+
+var_export("Message"); // ERROR
+var_export("Message", false); // ERROR
+var_export("Message", true); // OK
+
+
+function takesBool(bool $bool): void
+{
+    var_export("Message", $bool); // ERROR
+    
+    if ($bool === false) {
+        return;
+    }
+    
+    var_export("Message", $bool); // OK
+}
+```
+
+Hint: Get a Type object of the second argument. Use `Type::isTrue()` method and report an error if this does not resolve to `yes`.
+
+
+
+### Generalise PersonSetIdOnlyCalledFromTestCodeRule to any class implementing Entity
+
 Generalise the `PersonSetIdOnlyCalledFromTestCodeRule` so that it works for any class that implements `Entity`.
 
-Don't forget, start by adding tests cases. 

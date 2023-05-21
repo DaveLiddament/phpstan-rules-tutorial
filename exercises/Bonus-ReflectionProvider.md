@@ -1,11 +1,17 @@
 # ReflectionProvider
 
+This is a bonus exercise. We won't have time for it during the workshop, but please have a go at home. 
+
+
 Sometimes you'll need to write a rule that requires information about code that is not related to the node you are currently processing. 
 
 
 ## Demo
 
-Look at the CallableFrom attribute.
+Look at the [CallableFrom](../src/CallableFrom.php) attribute.
+
+The aim is to make a rule that will enforce this attribute. 
+
 
 #### Fixtures
 
@@ -172,3 +178,6 @@ class Person
 }
 
 ```
+
+
+Check out [PHP Language Extension library](https://github.com/DaveLiddament/php-language-extensions) and the [PHPStan extension](https://github.com/DaveLiddament/phpstan-php-language-extensions) for implementations along this line. 
