@@ -5,7 +5,7 @@ This repository contains the code to support [Dave Liddament](https://twitter.co
 
 ## Pre tutorial setup
 
-1. Set up an environment with either PHP 8.0, 8.1 or 8.2.
+1. Set up an environment with either PHP 8.2 or 8.3.
 1. Clone this repository.
 1. Run: `composer install`
 1. Run all the checks. There is a composer script for this: `composer run-script all-checks`
@@ -26,7 +26,7 @@ Note: Using configuration file /vagrant/phpstan.neon.
 > phpunit
 PHPUnit 9.5.26 by Sebastian Bergmann and contributors.
 
-Runtime:       PHP 8.0.25
+Runtime:       PHP 8.2.18
 Configuration: /vagrant/phpunit.xml
 
 .                                                                   1 / 1 (100%)

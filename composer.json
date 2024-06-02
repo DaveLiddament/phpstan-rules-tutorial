@@ -3,11 +3,11 @@
   "description": "Repo to support the PHPStan rules tutorial",
   "type": "project",
   "require": {
-    "php": ">=8.0 <8.3"
+    "php": ">=8.2 <8.4"
   },
   "require-dev": {
-    "phpstan/phpstan": "^1.10.15",
-    "phpunit/phpunit": "^9.6.8"
+    "phpstan/phpstan": "^1.11.3",
+    "phpunit/phpunit": "^9.6.19"
   },
   "license": "MIT",
   "autoload": {
