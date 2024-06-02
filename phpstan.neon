@@ -3,4 +3,28 @@ parameters:
     paths:
     - src
     - tests
+    - build/Phpstan
+    excludePaths:
+    - build/Phpstan/*/Fixtures/*
 
+services:
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallPrintRule
+    tags:
+    - phpstan.rules.rule
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallEchoRule
+    tags:
+    - phpstan.rules.rule
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallDieRule
+    tags:
+    - phpstan.rules.rule
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallExitRule
+    tags:
+    - phpstan.rules.rule
+-
+    class: DaveLiddament\PhpstanTutorial\Phpstan\Rules\DontCallGotoRule
+    tags:
+    - phpstan.rules.rule
